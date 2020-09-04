@@ -5,28 +5,41 @@ import Categories from './Categories'
 import styles from './Header.module.scss'
 
 const Header = () => (
-  <header>
-    <h1>
-      <Link to="/" activeClassName={styles.activeNav}>
+  <nav className="navbar" role="navigation" aria-label="main navigation">
+    <div className="navbar-brand">
+      <Link to="/" className="navbar-item" activeClassName={styles.activeNav}>
+        <span className="icon">
+          <i className="fas fa-mountain" />
+        </span>&nbsp;
         {config.siteTitle}
       </Link>
-    </h1>
-    <nav>
-      <ul className={styles.mainNav}>
-        <li>
-          <Link to="/about" activeClassName={styles.activeNav}>
+
+      <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true" />
+        <span aria-hidden="true" />
+        <span aria-hidden="true" />
+      </a>
+    </div>
+
+    <div id="topNav" className="navbar-menu">
+      <div className="navbar-end">
+        <div className="navbar-item has-dropdown is-hoverable">
+          <a className="navbar-link">Categories</a>
+          <div className="navbar-dropdown">
+            <Categories activeClassName={styles.activeNav} />
+          </div>
+        </div>
+        <div className="navbar-item">
+          <Link to="/about" className="navbar-item" activeClassName={styles.activeNav}>
             About
           </Link>
-        </li>
-        <Categories activeClassName={styles.activeNav} />
-        <li>
-          <Link to="/contact" activeClassName={styles.activeNav}>
+          <Link to="/contact" className="navbar-item" activeClassName={styles.activeNav}>
             Contact
           </Link>
-        </li>
-      </ul>
-    </nav>
-  </header>
+        </div>
+      </div>
+    </div>
+  </nav>
 )
 
 export default Header

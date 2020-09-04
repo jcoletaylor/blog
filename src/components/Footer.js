@@ -28,7 +28,11 @@ const Footer = () => (
           RSS
         </a>
       </div>
-      <div className={styles.copyright}>{config.copyright}</div>
+      <div className={styles.copyright}>
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+          <img alt="Creative Commons License" style={{ borderWidth: 0 }} src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by.svg" />
+        </a>
+      </div>
     </div>
   </footer>
 )

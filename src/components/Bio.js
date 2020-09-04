@@ -10,9 +10,7 @@ const Bio = ({ config, expanded }) => (
       alt={config.userName}
     />
     <p>
-      Written by <strong>{config.userName}</strong> who lives and works in San
-      Francisco building useful things.
-      {` `}
+      <strong>{config.userName}</strong> would like to be in the woods, on the cushion, or writing code.
       <Follow
         username={config.userTwitter}
         options={{ count: expanded ? true : 'none' }}

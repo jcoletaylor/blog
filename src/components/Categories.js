@@ -17,16 +17,15 @@ const Categories = props => {
   return (
     <>
       {data.allMarkdownRemark.group.map(category => (
-        <li key={category.fieldValue}>
-          <Link
-            to={`/${_.kebabCase(category.fieldValue)}`}
-            key={category.fieldValue}
-            activeClassName={props.activeClassName}
-          >
-            {category.fieldValue}
-            <strong> ({category.totalCount})</strong>
-          </Link>
-        </li>
+        <Link
+          to={`/${_.kebabCase(category.fieldValue)}`}
+          key={category.fieldValue}
+          className="navbar-item"
+          activeClassName={props.activeClassName}
+        >
+          {category.fieldValue}
+          <strong> ({category.totalCount})</strong>
+        </Link>
       ))}
     </>
   )

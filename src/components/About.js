@@ -1,8 +1,12 @@
 import React from 'react'
+import config from '../../data/SiteConfig'
 
 const About = () => (
   <>
-    <h1>Edit About component or pages/about.js to include your information.</h1>
+    <h1>{config.siteTitle}</h1>
+    <p>
+      {config.siteDescription}
+    </p>
   </>
 )
 
