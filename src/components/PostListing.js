@@ -4,7 +4,7 @@ const CARD_BLOCKS = 3
 
 const PostListing = ({ postEdges }) => {
   const getPostListSets = () => {
-    const needSets = Math.round(postEdges.length / CARD_BLOCKS)
+    const needSets = Math.round(postEdges.length / CARD_BLOCKS) + 1
     const range = Array.from({ length: needSets })
     const postListSets = range.map((x, idx) => {
       const rangeStart = (idx * CARD_BLOCKS)
