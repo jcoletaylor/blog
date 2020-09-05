@@ -7,11 +7,9 @@ const PostListing = ({ postEdges }) => {
     const needSets = Math.round(postEdges.length / CARD_BLOCKS)
     const range = Array.from({ length: needSets })
     const postListSets = range.map((x, idx) => {
-      let rangeEnd = CARD_BLOCKS + 1
-      if (idx !== 0) {
-        rangeEnd = (CARD_BLOCKS * idx) + 1
-      }
-      const edges = postEdges.slice(idx * CARD_BLOCKS, rangeEnd)
+      const rangeStart = (idx * CARD_BLOCKS)
+      const rangeEnd = rangeStart + CARD_BLOCKS + 1
+      const edges = postEdges.slice(rangeStart, rangeEnd)
       const set = []
       edges.forEach(postEdge => {
         set.push({
