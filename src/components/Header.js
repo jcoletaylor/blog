@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import config from '../../data/SiteConfig'
 import Categories from './Categories'
 
-const Header = () => (
+const Header = () => {
+  const [navBurgerActive, setNavBurgerActive] = useState(false)
+  return (
   <nav className="navbar" role="navigation" aria-label="main navigation">
     <div className="navbar-brand">
       <Link to="/" className="navbar-item">
@@ -13,14 +15,24 @@ const Header = () => (
         <span className="has-text-weight-bold">{config.siteTitle}</span>
       </Link>
 
-      <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <a
+        role="button"
+        onClick={() => {
+          setNavBurgerActive(!navBurgerActive)
+        }}
+        className={`navbar-burger burger ${navBurgerActive ? 'is-active': ''}`}
+        aria-label="menu" 
+        aria-expanded="false" 
+        data-target="topNav"
+      >
         <span aria-hidden="true" />
         <span aria-hidden="true" />
         <span aria-hidden="true" />
       </a>
     </div>
 
-    <div id="topNav" className="navbar-menu">
+    <div id="topNav"
+      className={`navbar-menu ${navBurgerActive ? 'is-active' : ''}`}>
       <div className="navbar-end">
         <div className="navbar-item">
           <Categories />
@@ -65,6 +77,7 @@ const Header = () => (
       </div>
     </div>
   </nav>
-)
+  )
+}
 
 export default Header
