@@ -20,11 +20,9 @@ const Categories = props => {
         <Link
           to={`/${_.kebabCase(category.fieldValue)}`}
           key={category.fieldValue}
-          className="navbar-item"
-          activeClassName={props.activeClassName}
+          className="navbar-item is-size-7"
         >
-          {category.fieldValue}
-          <strong> ({category.totalCount})</strong>
+          {category.fieldValue} ({category.totalCount})
         </Link>
       ))}
     </>

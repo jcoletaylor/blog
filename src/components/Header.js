@@ -2,16 +2,15 @@ import React from 'react'
 import { Link } from 'gatsby'
 import config from '../../data/SiteConfig'
 import Categories from './Categories'
-import styles from './Header.module.scss'
 
 const Header = () => (
   <nav className="navbar" role="navigation" aria-label="main navigation">
     <div className="navbar-brand">
-      <Link to="/" className="navbar-item" activeClassName={styles.activeNav}>
-        <span className="icon">
+      <Link to="/" className="navbar-item">
+        <span className="icon has-text-primary">
           <i className="fas fa-mountain" />
         </span>&nbsp;
-        {config.siteTitle}
+        <span className="has-text-weight-bold">{config.siteTitle}</span>
       </Link>
 
       <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -23,17 +22,43 @@ const Header = () => (
 
     <div id="topNav" className="navbar-menu">
       <div className="navbar-end">
+        <div className="navbar-item">
+          <Categories />
+        </div>
         <div className="navbar-item has-dropdown is-hoverable">
-          <a className="navbar-link">Categories</a>
+          <a className="navbar-link">Follow</a>
           <div className="navbar-dropdown">
-            <Categories activeClassName={styles.activeNav} />
+            <a
+              href={`https://twitter.com/${config.userTwitter}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar-item"
+            >
+              Twitter
+            </a>
+            <a
+              href={`https://github.com/${config.userGitHub}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar-item"
+            >
+              GitHub
+            </a>
+            <a
+              href={config.siteUrl + config.siteRss}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar-item"
+            >
+              RSS
+            </a>
           </div>
         </div>
         <div className="navbar-item">
-          <Link to="/about" className="navbar-item" activeClassName={styles.activeNav}>
+          <Link to="/about" className="navbar-item">
             About
           </Link>
-          <Link to="/contact" className="navbar-item" activeClassName={styles.activeNav}>
+          <Link to="/contact" className="navbar-item">
             Contact
           </Link>
         </div>

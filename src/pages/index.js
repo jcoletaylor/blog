@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../layout'
 import PostListing from '../components/PostListing'
 import SEO from '../components/SEO'
+import Hero from '../components/Hero'
 import config from '../../data/SiteConfig'
 
 const Index = ({ data }) => (
@@ -11,6 +12,7 @@ const Index = ({ data }) => (
     <main>
       <Helmet title={config.siteTitle} />
       <SEO />
+      <Hero />
       <PostListing postEdges={data.allMarkdownRemark.edges} />
     </main>
   </Layout>

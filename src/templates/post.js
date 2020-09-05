@@ -25,16 +25,17 @@ export default ({ data, pageContext }) => {
           <title>{`${post.title} | ${config.siteTitle}`}</title>
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
-        <div>
-          <h1>{post.title}</h1>
-          <p className={styles.postMeta}>
-            {date} &mdash; {postNode.timeToRead} Min Read{' '}
-          </p>
-          <div className={styles.postMeta}>
-            <PostTags tags={post.tags} />
-          </div>
-          <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-
+        <div className="container">
+          <section className="section">
+            <h1 className="is-size-1">{post.title}</h1>
+            <p className={styles.postMeta}>
+              {date} &mdash; {postNode.timeToRead} Min Read{' '}
+            </p>
+            <div className={styles.postMeta}>
+              <PostTags tags={post.tags} />
+            </div>
+            <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+          </section>
           <hr />
           <Bio config={config} />
           <div className={styles.postMeta}>
