@@ -1,34 +1,47 @@
 import React from 'react'
 import PostCard from './PostCard'
+const CARD_BLOCKS = 3
 
 const PostListing = ({ postEdges }) => {
-  const getPostList = () => {
-    const postList = []
-    postEdges.forEach(postEdge => {
-      postList.push({
-        path: postEdge.node.fields.slug,
-        tags: postEdge.node.frontmatter.tags,
-        categories: postEdge.node.frontmatter.categories,
-        cover: postEdge.node.frontmatter.cover,
-        title: postEdge.node.frontmatter.title,
-        date: postEdge.node.fields.date,
-        excerpt: postEdge.node.excerpt,
-        timeToRead: postEdge.node.timeToRead
+  const getPostListSets = () => {
+    const needSets = Math.round(postEdges.length / CARD_BLOCKS)
+    const range = Array.from({ length: needSets })
+    const postListSets = range.map((x, idx) => {
+      let rangeEnd = CARD_BLOCKS + 1
+      if (idx !== 0) {
+        rangeEnd = (CARD_BLOCKS * idx) + 1
+      }
+      const edges = postEdges.slice(idx * CARD_BLOCKS, rangeEnd)
+      const set = []
+      edges.forEach(postEdge => {
+        set.push({
+          path: postEdge.node.fields.slug,
+          tags: postEdge.node.frontmatter.tags,
+          categories: postEdge.node.frontmatter.categories,
+          cover: postEdge.node.frontmatter.cover,
+          title: postEdge.node.frontmatter.title,
+          date: postEdge.node.fields.date,
+          excerpt: postEdge.node.excerpt,
+          timeToRead: postEdge.node.timeToRead
+        })
       })
+      return set
     })
-    return postList
+    return postListSets
   }
 
-  const postList = getPostList()
+  const postListSets = getPostListSets()
   return (
-    <div className="columns">
-      {/* Your post list here. */
-      postList.map(post => (
-        <div className="column">
-          <PostCard post={post} />
-        </div>
-      ))}
-    </div>
+    postListSets.map(set => {
+      return (<div className="columns">
+        {/* Your post list here. */
+        set.map(post => (
+          <div className="column is-one-third">
+            <PostCard post={post} />
+          </div>
+        ))}
+      </div>)
+    })
   )
 }
 

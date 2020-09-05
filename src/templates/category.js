@@ -9,7 +9,7 @@ const CategoryTemplate = ({ data, pageContext }) => (
   <Layout>
     <main>
       <Helmet title={` "${pageContext.category}" - ${config.siteTitle}`} />
-      <h1>
+      <h1 className="is-size-1">
 Category:
 {' '}
 {pageContext.category}
