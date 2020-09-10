@@ -1,7 +1,7 @@
 ---
 date: 2020-05-11
 title: "UF Library Occupancy"
-cover: "images/library-widgets.png"
+cover: "images/library-widgets.jpg"
 categories: 
     - Code
 slug: "library-occupancy"
