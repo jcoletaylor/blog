@@ -1,7 +1,7 @@
 ---
 date: 2018-03-02
 title: "There are no words for"
-cover: "https://unsplash.it/400/300/?random?NoWords"
+cover: "images/canopy.jpg"
 categories: 
     - Water and Woods
 slug: "there-are-no-words-for"
