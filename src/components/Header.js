@@ -38,13 +38,19 @@ const Header = () => {
           <Categories />
         </div>
         <div className="navbar-item has-dropdown is-hoverable">
-          <a className="navbar-link">Follow</a>
+          <a className="navbar-link is-size-7">Connect</a>
           <div className="navbar-dropdown">
+            <Link to="/about" className="navbar-item is-size-7">
+              About
+            </Link>
+            <Link to="/contact" className="navbar-item is-size-7">
+              Contact
+            </Link>
             <a
               href={`https://twitter.com/${config.userTwitter}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="navbar-item"
+              className="navbar-item is-size-7"
             >
               Twitter
             </a>
@@ -52,7 +58,7 @@ const Header = () => {
               href={`https://github.com/${config.userGitHub}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="navbar-item"
+              className="navbar-item is-size-7"
             >
               GitHub
             </a>
@@ -60,19 +66,11 @@ const Header = () => {
               href={config.siteUrl + config.siteRss}
               target="_blank"
               rel="noopener noreferrer"
-              className="navbar-item"
+              className="navbar-item is-size-7"
             >
               RSS
             </a>
           </div>
-        </div>
-        <div className="navbar-item">
-          <Link to="/about" className="navbar-item">
-            About
-          </Link>
-          <Link to="/contact" className="navbar-item">
-            Contact
-          </Link>
         </div>
       </div>
     </div>
