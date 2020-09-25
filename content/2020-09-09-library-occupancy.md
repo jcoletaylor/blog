@@ -38,3 +38,7 @@ The first variation, and the one that [has been deployed](http://www.uflib.ufl.e
 ## Open Source
 
 Most of the code I write for [Fracture](https://fractureme.com) is closed source, and that's okay, we have IP that makes sense to keep in-house. But it felt really good to be able to write this and release it GPLv3 - it's unlikely a lot of folks would need this particular solution, but it feels good to write something that helps people and that I can make available to others if they could find a use for it.
+
+## Update: In the News!
+
+The Alligator, Gainesville's independent newspaper, [did a writeup](https://www.alligator.org/covid-19/smooth-sailing-for-uf-s-capacity-counters-on-campus/article_419fd54c-fea8-11ea-9d62-dfa2efcabe75.html) about the status pages for occupancy at UF. Very Cool!
