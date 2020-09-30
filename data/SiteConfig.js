@@ -8,7 +8,7 @@ const config = {
   siteDescription: 'Thoughts on Zen, Hiking, Politics, Plants, and Software', // Website description used for RSS feeds/meta description tag.
   siteRss: '/rss.xml', // Path to the RSS file.
   siteFBAppID: '12345', // FB Application ID for using app insights
-  googleAnalyticsID: 'UA-12345-1', // GA tracking ID.
+  googleAnalyticsID: 'UA-56164127-1', // GA tracking ID.
   dateFromFormat: 'YYYY-MM-DD', // Date format used in the frontmatter.
   dateFormat: 'YYYY/MM/DD', // Date format for display.
   userName: 'Pete Taylor', // Username to display in the author segment.
