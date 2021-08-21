@@ -29,7 +29,11 @@ For the core of this project, I selected Rails to help me do my data modeling an
 
 ### Generating and Loading Data
 
-As described in Part one, the grunt work of this project was taking semi-structured HTML and building parsers that were flexible enough to generate structured data. While a bit beyond the scope of this project, as with many data-heavy projects, acquiring and cleaning the data from its original source is sometimes the largest lift (ask any of your data scientist friends). The resulting data model is probably easier [to just look](https://dbdiagram.io/d/612122886dc2bb6073b53325) at than describe. I did this in a few stages:
+As described in Part one, the grunt work of this project was taking semi-structured HTML and building parsers that were flexible enough to generate structured data. While a bit beyond the scope of this project, as with many data-heavy projects, acquiring and cleaning the data from its original source is sometimes the largest lift (ask any of your data scientist friends). The resulting data model is probably easier [to just look](https://dbdiagram.io/d/612122886dc2bb6073b53325) at than describe. 
+
+![](./images/herbly.app.png)
+
+I did this in a few stages:
 
 1) Crawling the site (with explicit written permission) to get the thousands of herbs, conditions, and formulas that would represent the data layer. 
 2) Parsing the individual herb pages and building references to the other herbs and formulas that were cross linked.
