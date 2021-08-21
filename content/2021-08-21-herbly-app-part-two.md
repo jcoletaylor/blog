@@ -1,7 +1,7 @@
 ---
 date: 2021-08-21
 title: "Herbly.app: Part 2"
-cover: "images/herbly.app.jpg"
+cover: "images/herbly-app.jpg"
 categories: 
     - Code
 slug: "herbly-app-part-two"
