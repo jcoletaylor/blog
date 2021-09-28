@@ -1,5 +1,5 @@
 ---
-date: 2021-09-28
+date: 2021-09-27
 title: "Loss and Impermanence"
 cover: "images/willow-black-and-white.jpg"
 categories: 
